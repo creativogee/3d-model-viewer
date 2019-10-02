@@ -15,7 +15,7 @@
     <main>
       <form action="">
         <div id="placeholder" class="form-wrapper">
-          <input id="file" type="file" accept=".glb" />
+          <input id="fileInput" type="file" accept=".glb" />
           <div class="image__button">
             <img
               src="/assets/ImagePlaceholderIcon.svg"
@@ -24,18 +24,26 @@
             <button>Browse File</button>
           </div>
         </div>
-        <model-viewer
-          id="model"
-          class="hidden model"
-          alt=""
-          src=""
-          shadow-intensity='1'
-          camera-controls
-          auto-rotate
-          ar
-        ></model-viewer>
+        <div id="modelWrapper" class="hidden model-wrapper">
+          <article id="infoTag">
+            <ul>
+            </ul>
+          </article>
+          <model-viewer
+            id="model"
+            class="model"
+            alt=""
+            src=""
+            shadow-intensity='1'
+            camera-controls
+            auto-rotate
+            ar
+          ></model-viewer>
+          <button id="removeModel">Remove</button>
+        </div>
       </form>
     </main>
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"></script>
+    <script src="./helper.js" type="module"></script>
   </body>
 </html>
